@@ -1,7 +1,10 @@
 import React from 'react';
 import './Coin.css';
 
-const Coin = ({ name, image, symbol, price, volume, priceChange, marketcap, coins }) => {
+const Coin = ({ name, image, symbol, price, volume, priceChange, marketcap, loading }) => {
+    if (loading) {
+        return <h2>Loading...</h2>
+    }
 
     return (
         <div className="coin-container">
@@ -18,19 +21,12 @@ const Coin = ({ name, image, symbol, price, volume, priceChange, marketcap, coin
                         <p className="coin-percent red">{priceChange?.toFixed(2)}%</p>
                     ) : (
                             <p className="coin-percent green">{priceChange?.toFixed(2)}%</p>
-                        )};
+                        )}
                     <p className="coin-marketcap">
                         Mkt Cap: ${marketcap.toLocaleString()}
                     </p>
                 </div>
             </div>
-            {/* <ul className='list-group mb-4'>
-                {coins.map(coin => (
-                    <li key={coin.id} className='list-group-item'>
-                        {coin.title}
-                    </li>
-                ))}
-            </ul> */}
         </div>
     )
 }
