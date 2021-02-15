@@ -14,13 +14,25 @@ td {
 }
 
 .first-col {
-    width: 250px;
-    min-width: 250px;
-    max-width: 250px;
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
     padding: 1rem;
     text-align: start;
     background-color: #fff;
     border-bottom: none;
+}
+
+.small-width {
+    width: 100px;
+    min-width: 100px;
+    max-width: 100px;
+}
+
+.price {
+    width: 150px;
+    min-width: 150px;
+    max-width: 150px;
 }
 
 .flex {
@@ -53,4 +65,22 @@ td p {
 
 .green {
     color: #11d811;
+}
+
+.nav {
+    text-decoration: none;
+    padding: 0 .5rem;
+}
+
+@media screen and (min-width: 1024px) {
+    .first-col {
+        width: 250px;
+        min-width: 250px;
+        max-width: 250px;
+    }
+
+    .nav {
+        text-decoration: none;
+        padding: 0 1rem;
+    }
 }

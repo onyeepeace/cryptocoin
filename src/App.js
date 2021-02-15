@@ -49,31 +49,29 @@ function App() {
         <table>
           <thead>
             <tr>
-              <th class="sticky-col first-col">Coin</th>
-              <th>Symbol</th>
-              <th>Price</th>
+              <th className="sticky-col first-col">Coin</th>
+              <th className="small-width">Symbol</th>
+              <th className="price">Price</th>
               <th>Volume</th>
-              <th>Price Change</th>
+              <th className="small-width">Price Change</th>
               <th>Market Cap</th>
             </tr>
           </thead>
         </table>
         {filteredCoins.map(coin => {
           return (
-            <>
-              <Coin
-                coins={currentPosts}
-                key={coin.id}
-                name={coin.name}
-                image={coin.image}
-                symbol={coin.symbol}
-                price={coin.current_price}
-                marketcap={coin.market_cap}
-                priceChange={coin.price_change_percentage_24h}
-                volume={coin.total_volume}
-                loading={loading}
-              />
-            </>
+            <Coin
+              coins={currentPosts}
+              key={coin.id}
+              name={coin.name}
+              image={coin.image}
+              symbol={coin.symbol}
+              price={coin.current_price}
+              marketcap={coin.market_cap}
+              priceChange={coin.price_change_percentage_24h}
+              volume={coin.total_volume}
+              loading={loading}
+            />
           )
         })}
       </div>

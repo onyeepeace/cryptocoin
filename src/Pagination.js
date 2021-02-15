@@ -1,4 +1,6 @@
 import React from 'react'
+import { NavLink, BrowserRouter as Router } from 'react-router-dom';
+import './Coin.css';
 
 const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
     const pageNumbers = [];
@@ -7,19 +9,19 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
         pageNumbers.push(i);
     }
     return (
-        <div>
+        <Router>
             <nav style={{ display: 'flex', justifyContent: 'center' }}>
                 <ul style={{ listStyle: 'none', display: 'flex', margin: '1rem' }}>
                     {pageNumbers.map(number => (
                         <li key={number}>
-                            <a href="!#" style={{ textDecoration: 'none', padding: '0 1rem' }} onClick={() => paginate(number)}>
+                            <NavLink to="/!#" className="nav" onClick={() => paginate(number)}>
                                 {number}
-                            </a>
+                            </NavLink>
                         </li>
                     ))}
                 </ul>
             </nav>
-        </div>
+        </Router>
     )
 }
 
