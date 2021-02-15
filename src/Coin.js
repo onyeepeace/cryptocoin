@@ -9,23 +9,27 @@ const Coin = ({ name, image, symbol, price, volume, priceChange, marketcap, load
     return (
         <div className="coin-container">
             <div className="coin-row">
-                <div className="coin">
-                    <img src={image} alt="crypto logo" />
-                    <h1>{name}</h1>
-                    <p className="coin-symbol">{symbol}</p>
-                </div>
-                <div className="coin-data">
-                    <p className="coin-price">${price}</p>
-                    <p className="coin-volume">${volume.toLocaleString()}</p>
-                    {priceChange < 0 ? (
-                        <p className="coin-percent red">{priceChange?.toFixed(2)}%</p>
-                    ) : (
-                            <p className="coin-percent green">{priceChange?.toFixed(2)}%</p>
-                        )}
-                    <p className="coin-marketcap">
-                        Mkt Cap: ${marketcap.toLocaleString()}
-                    </p>
-                </div>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td className="sticky-col first-col">
+                                <div className="flex">
+                                    <img src={image} alt="coin logo" />
+                                    <p>{name}</p>
+                                </div>
+                            </td>
+                            <td>{symbol}</td>
+                            <td>${price}</td>
+                            <td>${volume.toLocaleString()}</td>
+                            <td>{priceChange < 0 ? (
+                                <p className="coin-percent red">{priceChange?.toFixed(2)}%</p>
+                            ) : (
+                                    <p className="coin-percent green">{priceChange?.toFixed(2)}%</p>
+                                )}</td>
+                            <td>${marketcap.toLocaleString()}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     )

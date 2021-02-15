@@ -39,27 +39,44 @@ function App() {
   return (
     <div className="coin-app">
       <div className="coin-search">
-        <h1 className="coin-text">Search a currency</h1>
+        <h2>Live Cryptocurrency Prices & Coin Market Caps</h2>
+        <h3 className="coin-text">Search a currency</h3>
         <form>
           <input type="text" placeholder="Search" className="coin-input" onChange={handleChange} />
         </form>
       </div>
-      {filteredCoins.map(coin => {
-        return (
-          <Coin
-            coins={currentPosts}
-            key={coin.id}
-            name={coin.name}
-            image={coin.image}
-            symbol={coin.symbol}
-            price={coin.current_price}
-            marketcap={coin.market_cap}
-            priceChange={coin.price_change_percentage_24h}
-            volume={coin.total_volume}
-            loading={loading}
-          />
-        )
-      })}
+      <div className="main">
+        <table>
+          <thead>
+            <tr>
+              <th class="sticky-col first-col">Coin</th>
+              <th>Symbol</th>
+              <th>Price</th>
+              <th>Volume</th>
+              <th>Price Change</th>
+              <th>Market Cap</th>
+            </tr>
+          </thead>
+        </table>
+        {filteredCoins.map(coin => {
+          return (
+            <>
+              <Coin
+                coins={currentPosts}
+                key={coin.id}
+                name={coin.name}
+                image={coin.image}
+                symbol={coin.symbol}
+                price={coin.current_price}
+                marketcap={coin.market_cap}
+                priceChange={coin.price_change_percentage_24h}
+                volume={coin.total_volume}
+                loading={loading}
+              />
+            </>
+          )
+        })}
+      </div>
       <Pagination postsPerPage={postsPerPage} totalPosts={coins.length} paginate={paginate} />
     </div>
   )

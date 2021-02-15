@@ -9,12 +9,8 @@
   color: #222;
 }
 
-.coin-app {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 64px;
-  color: #fff;
+body {
+  margin: 2rem 1rem;
 }
 
 .coin-search {
@@ -25,7 +21,7 @@
   align-items: center;
 }
 
-.coinn-text {
+.coin-text, .coin-search h2 {
   margin-bottom: 32px;
   text-align: center;
 }
@@ -45,4 +41,45 @@
 .coin-input::placeholder {
   color: #222;
   font-weight: 700;
+}
+
+.main {
+  position: relative;
+  overflow: auto;
+  border: 1px solid black;
+}
+
+.sticky-col {
+  position: sticky;
+  position: -webkit-sticky;
+}
+
+.first-col {
+  width: 250px;
+  min-width: 250px;
+  max-width: 250px;
+  left: 0;
+}
+
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+table, td, th {
+  border-left: 1px solid;
+  border-right: 1px solid;
+}
+
+th {
+  width: 200px;
+  min-width: 200px;
+  max-width: 200px;
+  margin: 0;
+  text-align: start;
+  padding: 1rem;
+}
+
+table {
+  width: 100%;
 }
